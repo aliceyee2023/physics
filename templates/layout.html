@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Django App
+
+        {% endblock%}
+    </title>
+    <link rel="stylesheet" href ="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+<body> 
+    <nav>
+           <a href = "/"> 
+             <span role = "img" aria-label ="Home" >🎪 </span>
+            </a> |
+           <a href = "/about"> 
+                <span role = "img" aria-label ="About" >😊 </span>
+            </a> |
+            <a href = "/past"> 
+                <span role = "img" aria-label ="Past Students" > 🎃</span>
+            </a> |
+            <a href = "/contact"> 
+            <span role = "img" aria-label ="Contact" >📠 </span> 
+            </a> |
+
+            <a href = "/resource"> 
+                <span role = "img" aria-label ="Resource" >👜 </span> 
+            </a> |
+           <a href = "{% url 'posts:enquiryform' %}"> 
+            <span role = "img" aria-label ="Enquiry" >📠 </span> 
+           </a> |
+           
+    </nav>
+    <main>
+       {% block content %}
+
+       {% endblock %}
+    </main>
+    
+</body>
+</html>
